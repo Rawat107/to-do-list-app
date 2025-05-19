@@ -1,55 +1,91 @@
 import { useState } from 'react';
+import { Pencil, Trash2, CheckCircle, RotateCcw, Save } from 'lucide-react';
 
 function ToDoItem({ todo, toggleComplete, deleteTodo, toggleEdit, editTodo }) {
   const [editedText, setEditedText] = useState(todo.text);
 
-  return (
-    <div
-      className={`flex justify-between items-center p-4 rounded-md shadow-sm ${
-        todo.completed ? 'bg-gray-200 text-gray-500 line-through' : 'bg-white text-gray-800'
-      }`}
-    >
-      {todo.isEditing ? (
-        <input
-          type="text"
-          className="border px-3 py-1 rounded w-full mr-3 text-gray-900"
-          value={editedText}
-          onChange={(e) => setEditedText(e.target.value)}
-        />
-      ) : (
-        <span className="flex-grow font-medium text-base">{todo.text}</span>
-      )}
+  const handleEditKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      editTodo(todo.id, editedText);
+    }
+  };
 
-      <div className="flex gap-2 ml-3">
+  const handleEditClick = () => {
+    editTodo(todo.id, editedText);
+  };
+
+  return (
+    <div className="bg-amber-50 shadow-md p-4 rounded-md flex justify-between items-center transition-all duration-300 animate-fadeIn">
+      <div className="flex-grow">
         {todo.isEditing ? (
-          <button
-            className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded"
-            onClick={() => editTodo(todo.id, editedText)}
-          >
-            Save
-          </button>
+          <input
+            type="text"
+            className="w-full border px-3 py-1 rounded text-gray-900 bg-purple-100"
+            value={editedText}
+            onChange={(e) => setEditedText(e.target.value)}
+            onKeyDown={handleEditKeyDown}
+          />
         ) : (
-          <button
-            className="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded"
-            onClick={() => toggleEdit(todo.id)}
+          <span
+            className={`text-base font-medium ${
+              todo.completed ? 'line-through text-gray-500' : 'text-gray-800'
+            }`}
           >
-            Edit
-          </button>
+            {todo.text}
+          </span>
+        )}
+      </div>
+
+      <div className="flex items-center space-x-3 ml-4">
+        {!todo.completed && !todo.isEditing && (
+          <div className="flex flex-col items-center">
+            <button
+              onClick={() => toggleEdit(todo.id)}
+              className="text-indigo-600 hover:text-indigo-800 transition cursor-pointer"
+            >
+              <Pencil size={20} />
+            </button>
+            <span className="text-xs text-gray-500">Edit</span>
+          </div>
         )}
 
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
-          onClick={() => toggleComplete(todo.id)}
-        >
-          {todo.completed ? 'Undo' : 'Done'}
-        </button>
+        {todo.isEditing && (
+          <div className="flex flex-col items-center">
+            <button
+              onClick={handleEditClick}
+              className="text-green-600 hover:text-green-800 transition cursor-pointer"
+            >
+              <Save size={20} />
+            </button>
+            <span className="text-xs text-gray-500">Save</span>
+          </div>
+        )}
 
-        <button
-          className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
-          onClick={() => deleteTodo(todo.id)}
-        >
-          Delete
-        </button>
+        <div className="flex flex-col items-center">
+          <button
+            onClick={() => toggleComplete(todo.id)}
+            className={`${
+              todo.completed
+                ? 'text-purple-600 hover:text-purple-800'
+                : 'text-green-600 hover:text-green-800'
+            } transition cursor-pointer`}
+          >
+            {todo.completed ? <RotateCcw size={20} /> : <CheckCircle size={20} />}
+          </button>
+          <span className="text-xs text-gray-500">
+            {todo.completed ? 'Undo' : 'Done'}
+          </span>
+        </div>
+
+        <div className="flex flex-col items-center">
+          <button
+            onClick={() => deleteTodo(todo.id)}
+            className="text-red-600 hover:text-red-800 transition cursor-pointer"
+          >
+            <Trash2 size={20} />
+          </button>
+          <span className="text-xs text-gray-500">Delete</span>
+        </div>
       </div>
     </div>
   );
