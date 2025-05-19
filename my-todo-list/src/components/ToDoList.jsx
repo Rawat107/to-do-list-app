@@ -1,19 +1,5 @@
 import ToDoItem from "./ToDoItem";
 
-<<<<<<< HEAD
-function ToDoList({ todos, deleteTodo, toggleComplete, toggleEdit, editTodo }){
-    return (
-        <div className="mt-6 space-y-4">
-            {todos.map(todo => (
-                <ToDoItem 
-                    key={todo.id}
-                    todo={todo}
-                    deleteTodo={deleteTodo}
-                    toggleComplete={toggleComplete}
-                    toggleEdit={toggleEdit}
-                    editTodo={editTodo}
-                />
-=======
 function ToDoList({ todos, deleteTodo, toggleComplete, toggleEdit, editTodo }) {
   const activeTodos = todos.filter((todo) => !todo.completed);
   const completedTodos = todos.filter((todo) => todo.completed);
@@ -34,7 +20,6 @@ function ToDoList({ todos, deleteTodo, toggleComplete, toggleEdit, editTodo }) {
                 toggleEdit={toggleEdit}
                 editTodo={editTodo}
               />
->>>>>>> 10deb1beeb69a5bb62c378c1a698d443a26bba8f
             ))}
           </div>
         </div>
