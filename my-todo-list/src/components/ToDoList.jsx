@@ -2,7 +2,7 @@ import ToDoItem from "./ToDoItem";
 
 function ToDoList({ todos, deleteTodo, toggleComplete, toggleEdit, editTodo }){
     return (
-        <div className="mt-6 space-y-3">
+        <div className="mt-6 space-y-4">
             {todos.map(todo => (
                 <ToDoItem 
                     key={todo.id}
