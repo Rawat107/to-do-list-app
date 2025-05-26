@@ -1,8 +1,8 @@
-# 📝 React To-Do List App
+#  React To-Do List App
 
 A simple yet visually appealing **To-Do List application** built with **React and Tailwind CSS**, designed to help you manage your daily tasks efficiently.
 
-## ✨ Features
+##  Features
 
 * Add, edit, delete, complete, and undo tasks
 * Tasks are saved in **localStorage** for persistence
@@ -14,7 +14,7 @@ A simple yet visually appealing **To-Do List application** built with **React an
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 src/
@@ -30,7 +30,7 @@ src/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 Follow these steps to run the application locally:
 
@@ -38,7 +38,7 @@ Follow these steps to run the application locally:
 
 ```bash
 git clone https://github.com/Rawat107/to-do-list-app.git
-cd react-todo-app
+cd my-todo-list
 ```
 
 ### 2. Install Dependencies
@@ -52,14 +52,14 @@ npm install
 ### 3. Run the Application
 
 ```bash
-npm start
+npm run dev
 ```
 
 This will start the development server on [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 * [React](https://reactjs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
@@ -67,7 +67,7 @@ This will start the development server on [http://localhost:3000](http://localho
 
 ---
 
-## 📆 Deployment
+##  Deployment
 
 To build the app for production:
 
@@ -77,7 +77,7 @@ npm run build
 
 ---
 
-## 📃 License
+##  License
 
 This project is licensed under the MIT License — feel free to use, modify, and share it.
 
