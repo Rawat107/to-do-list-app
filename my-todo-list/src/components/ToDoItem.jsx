@@ -16,7 +16,7 @@ function ToDoItem({ todo, toggleComplete, deleteTodo, toggleEdit, editTodo }) {
 
   return (
     <div className="bg-amber-50 shadow-md p-4 rounded-md flex justify-between items-center transition-all duration-300 animate-fadeIn">
-      <div className="flex-grow">
+      <div className="flex-grow overflow-x-auto max-w-full whitespace-nowrap pr-2 scrollbar-thin">
         {todo.isEditing ? (
           <input
             type="text"

@@ -15,3 +15,16 @@
     animation: fadeIn 0.3s ease-out;
   }
 }
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #98b6dd; 
+  border-radius: 10px;
+}
