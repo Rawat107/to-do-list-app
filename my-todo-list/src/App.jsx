@@ -58,7 +58,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-6">
       <div className="max-w-xl mx-auto">
         <Header />
-        <div className="flex gap-2 mt-6">
+        <div className="flex flex-col sm:flex-row gap-2 mt-6">
           <input
             type="text"
             value={input}
@@ -69,7 +69,7 @@ function App() {
           />
           <button
             onClick={addTodo}
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition cursor-pointer w-full sm:w-auto"
           >
             Add
           </button>
