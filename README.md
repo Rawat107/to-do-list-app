@@ -20,12 +20,14 @@ A simple yet visually appealing **To-Do List application** built with **React an
 src/
 │
 ├── components/
-│   ├── ToDoItem.js
-│   └── ToDoList.js
+|   └── Header.jsx
+│   ├── ToDoItem.jsx
+│   └── ToDoList.jsx
 │
-├── App.js
-├── index.js
+├── App.jsx
+├── App.css
 └── index.css
+└── main.jsx
 ```
 
 ---
